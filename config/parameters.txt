@@ -1,0 +1,10 @@
+KeyName=peter_macbook
+NodeInstanceType=t3.medium
+NodeAutoScalingGroupMinSize=1
+NodeAutoScalingGroupMaxSize=3
+NodeAutoScalingGroupDesiredCapacity=2
+NodeVolumeSize=20
+ClusterName=test-eks-cluster
+BootstrapArguments=""
+NodeGroupName=test-eks-worker-nodes
+SpotInstanceBidPrice=0.05

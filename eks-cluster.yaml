@@ -1,0 +1,20 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Amazon EKS Sample Cluster'
+
+
+Resources:
+  Cluster:
+    Type: AWS::EKS::Cluster
+    Properties:
+      Name: test-eks-cluster
+      Version: '1.14'
+      RoleArn: !Sub 'arn:aws:iam::${AWS::AccountId}:role/eksServiceRole'
+      ResourcesVpcConfig:
+        SecurityGroupIds:
+        - Fn::ImportValue: eks-vpc-SecurityGroups
+        SubnetIds: 
+            Fn::Split:
+                - ","
+                - Fn::ImportValue: eks-vpc-SubnetIds
+                
