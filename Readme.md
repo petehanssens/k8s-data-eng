@@ -10,7 +10,12 @@ To reduce costs I'm using spot instances for the worker nodes.
 
 ## How to deploy
 
-Make sure you have the aws cli installed and an aws account configured with sufficient IAM priviledges and the run:
+Make sure you have the aws cli installed and an aws account configured with sufficient IAM priviledges.
+
+Follow this link and create an IAM role called "eks-setup-admin-role":
+https://console.aws.amazon.com/iam/home#/roles$new?step=review&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::aws:policy%2FAdministratorAccess
+
+And the run:
 
 ```sh
 ./deploy.sh
