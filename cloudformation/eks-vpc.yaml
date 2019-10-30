@@ -111,6 +111,10 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub "${AWS::StackName}-Subnet01"
+      - Key: kubernetes.io/role/internal-elb
+        Value: ""
+      - Key: kubernetes.io/role/elb
+        Value: ""
 
   Subnet02:
     Type: AWS::EC2::Subnet
@@ -129,6 +133,10 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub "${AWS::StackName}-Subnet02"
+      - Key: kubernetes.io/role/internal-elb
+        Value: ""
+      - Key: kubernetes.io/role/elb
+        Value: ""
 
   Subnet03:
     Condition: HasMoreThan2Azs
@@ -148,6 +156,10 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub "${AWS::StackName}-Subnet03"
+      - Key: kubernetes.io/role/internal-elb
+        Value: ""
+      - Key: kubernetes.io/role/elb
+        Value: ""
 
   Subnet01RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation

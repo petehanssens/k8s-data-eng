@@ -49,6 +49,18 @@ cd ../dashboard-deploy
 
 ./dashboard-deploy.sh
 
+cd ../helm
+
+./deploy_helm.sh
+
+cd ../patch-config-map
+
+./patch-config-map.sh
+
+cd ../alb-ingress-controller
+
+./ingress-deploy.sh
+
 cd ..
 
 echo "finished deployment"
